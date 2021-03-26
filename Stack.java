@@ -52,7 +52,8 @@ package tugas.struktur.data;
 	
     //Mengambil Data
 	private static void removeStack() {
-        System.out.println("Mengeluarkan Data Paling Atas : " + stack[0]);
+        int n=counters-1;
+        System.out.println("Mengeluarkan Data Paling Atas : | "+stack[n]+" |");
 		counters--; 
 		System.out.println("Data paling atas dalam stack sudah dikeluarkan");
 
@@ -60,14 +61,18 @@ package tugas.struktur.data;
 	
     //Menampilkan Data Paling Atas
     private static void showUp() {
-    System.out.println("Menampilkan Data Paling Atas : " + stack[0]);
+    int n=counters-1;
+    System.out.println("Menampilkan Data Paling Atas : | "+stack[n]+" |");
     }
 
     //Menampilkan Isi Keseluruhan
 	private static void displayFull() {
-		System.out.println("Data dalam Stack: ");
-		for(int i = 0; i < counters; i++) {
-			System.out.println("| "+stack[i]+" |" );
+            int n=counters-1;
+            int m=counters-2;
+		System.out.println("Data dalam Stack: " );
+                System.out.println("| "+stack[n]+" | => Data Pertama" );
+		for(int i = m; i > -1; i--) {
+                    System.out.println("| "+stack[i]+" |" );
 		}
 		System.out.println("");
 	}
@@ -105,7 +110,7 @@ package tugas.struktur.data;
 				removeStack();
 				break;
 			case 3:
-				
+				showUp();
 				break;
 			case 4:
 				displayFull();
@@ -138,7 +143,7 @@ package tugas.struktur.data;
 				choosenMenu = menuOption.nextInt();
 				loopX = 1;
 			}catch(InputMismatchException e) {
-				System.out.println("Masukan harus Angka!");
+				System.out.println("Masukan harus Angka");
 			}
 		}
 		System.out.println("");
