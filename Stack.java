@@ -52,29 +52,41 @@ package tugas.struktur.data;
 	
     //Mengambil Data
 	private static void removeStack() {
-        int n=counters-1;
-        System.out.println("Mengeluarkan Data Paling Atas : | "+stack[n]+" |");
-		counters--; 
-		System.out.println("Data paling atas dalam stack sudah dikeluarkan");
+        	int n=counters-1;
+		if (n < 0) {
+			System.out.println("Data Stack tidak ada" );
+		} else {
+			System.out.println("Mengeluarkan Data Paling Atas : | "+stack[n]+" |");
+			counters--; 
+			System.out.println("Data paling atas dalam stack sudah dikeluarkan");
+		}
 
 	}
 	
     //Menampilkan Data Paling Atas
     private static void showUp() {
-    int n=counters-1;
-    System.out.println("Menampilkan Data Paling Atas : | "+stack[n]+" |");
+    	int n=counters-1;
+    	if(n < 0){
+		System.out.println("Data Stack tidak ada" );
+	}else{
+		System.out.println("Menampilkan Data Paling Atas : | "+stack[n]+" |");
+	}
     }
 
     //Menampilkan Isi Keseluruhan
 	private static void displayFull() {
-            int n=counters-1;
-            int m=counters-2;
-		System.out.println("Data dalam Stack: " );
-                System.out.println("| "+stack[n]+" | => Data Pertama" );
-		for(int i = m; i > -1; i--) {
-                    System.out.println("| "+stack[i]+" |" );
+                int n=counters-1;
+                int m=counters-2;
+		if(n < 0){
+			System.out.println("Data Stack tidak ada" );
+		}else{
+			System.out.println("Data dalam Stack: " );
+			System.out.println("| "+stack[n]+" | => Data Pertama" );
+			for(int i = m; i > -1; i--) {
+				System.out.println("| "+stack[i]+" |" );
+			}
+			System.out.println("");
 		}
-		System.out.println("");
 	}
 	
     //Menghapus Isi Stack
